@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Briefing de Quiosque</title>
+<meta name="description" content="Envie o briefing e as referências do seu quiosque para shopping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #ececea; }
+  * { box-sizing: border-box; }
+  input, select, textarea { font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; }
+  input::placeholder, textarea::placeholder { color: #9e9b8e; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #111111; }
+  a { color: #111111; }
+  button:disabled { opacity: 0.6; cursor: default; }
+  .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-pad { padding: 80px 24px 96px; }
+  .headline { font-size: 52px; }
+  .actions-row { flex-wrap: nowrap; }
+  .submit-btn { width: auto; }
+  @media (max-width: 640px) {
+    .field-grid { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+    .page-pad { padding: 48px 20px 64px !important; }
+    .headline { font-size: 36px !important; }
+    .actions-row { flex-wrap: wrap !important; flex-direction: column-reverse; align-items: stretch !important; }
+    .submit-btn { width: 100% !important; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page-pad" style="width: 100%; min-height: 100vh; background: #ececea; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;">
+  <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #d6ff3f; color: #0b0b0b; padding: 8px 16px; border-radius: 999px; font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">//PROJETO DE QUIOSQUE</div>
+      <h1 class="headline" style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: 52px; line-height: 0.98; letter-spacing: -0.01em; color: #111111;">Vamos construir<br>seu quiosque.</h1>
+      <p style="margin: 0; max-width: 480px; font-weight: 400; font-size: 17px; line-height: 1.55; color: #625f52;">Preencha o briefing abaixo e envie suas referências visuais. Nossa equipe retorna em até 2 dias úteis.</p>
+    </div>
+
+    <div style="height: 1px; background: #8b8676; width: 100%;"></div>
+
+    <form id="briefing-form" style="display: flex; flex-direction: column; gap: 40px;">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Novo briefing de quiosque">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #625f52;">//DADOS DO PROJETO</div>
+
+        <div class="field-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="nome" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Nome completo</label>
+            <input id="nome" name="Nome completo" type="text" placeholder="Seu nome" required style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="email" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">E-mail</label>
+            <input id="email" name="E-mail" type="email" placeholder="voce@empresa.com" required style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="telefone" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Telefone / WhatsApp</label>
+            <input id="telefone" name="Telefone" type="tel" placeholder="(00) 00000-0000" required style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="empresa" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Empresa / Marca</label>
+            <input id="empresa" name="Empresa / Marca" type="text" placeholder="Nome da marca" style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="shopping" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Shopping</label>
+            <input id="shopping" name="Shopping" type="text" placeholder="Nome do shopping" required style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="cidade" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Cidade / UF</label>
+            <input id="cidade" name="Cidade / UF" type="text" placeholder="Cidade — UF" style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="metragem" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Metragem desejada (m²)</label>
+            <input id="metragem" name="Metragem (m²)" type="number" min="1" placeholder="Ex: 9" style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="orcamento" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Faixa de investimento</label>
+            <select id="orcamento" name="Faixa de investimento" style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+              <option value="">Selecione</option>
+              <option value="Até R$ 20.000">Até R$ 20.000</option>
+              <option value="R$ 20.000 – R$ 50.000">R$ 20.000 – R$ 50.000</option>
+              <option value="R$ 50.000 – R$ 100.000">R$ 50.000 – R$ 100.000</option>
+              <option value="Acima de R$ 100.000">Acima de R$ 100.000</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="height: 1px; background: #8b8676; width: 100%;"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #625f52;">//REFERÊNCIAS E BRIEFING</div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="linkref" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Link de referências (Pinterest, Instagram, Drive)</label>
+          <input id="linkref" name="Link de referências" type="url" placeholder="https://" style="width: 100%; padding: 14px 16px; font-size: 15px; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="arquivos" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Anexar referências (imagens, plantas, PDF)</label>
+          <input id="arquivos" name="attachment" type="file" multiple accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 14px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="descricao" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Descrição do projeto</label>
+          <textarea id="descricao" name="Descrição do projeto" rows="5" placeholder="Conceito, materiais, cores e referências de marca que gostaria de ver no quiosque." style="width: 100%; padding: 14px 16px; font-size: 15px; line-height: 1.5; color: #111111; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px; resize: vertical;"></textarea>
+        </div>
+      </div>
+
+      <div id="error-box" style="display: none; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #b3261e;">Não foi possível enviar agora. Tente novamente em instantes.</div>
+
+      <div class="actions-row" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+        <span style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; letter-spacing: 0.02em; color: #9e9b8e;">by Meu Quiosque Novo</span>
+        <button type="submit" id="submit-btn" class="submit-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #d6ff3f; color: #0b0b0b; border: none; border-radius: 999px; padding: 16px 28px; font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer;">
+          <span id="submit-label">Enviar projeto</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </form>
+
+    <div id="confirm-box" style="display: none; background: #0b0b0b; color: #f4f1e6; padding: 24px 28px; flex-direction: column; gap: 4px;">
+      <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 18px;">Briefing recebido.</span>
+      <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #9e9b8e;">Entraremos em contato em até 2 dias úteis.</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var form = document.getElementById('briefing-form');
+  var btn = document.getElementById('submit-btn');
+  var label = document.getElementById('submit-label');
+  var errorBox = document.getElementById('error-box');
+  var confirmBox = document.getElementById('confirm-box');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.style.display = 'none';
+    btn.disabled = true;
+    label.textContent = 'Enviando...';
+
+    var data = new FormData(form);
+
+    fetch('https://formsubmit.co/ajax/meuquiosquenovo@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+      .then(function (res) {
+        if (!res.ok) { throw new Error('request failed'); }
+        return res.json();
+      })
+      .then(function () {
+        form.style.display = 'none';
+        confirmBox.style.display = 'flex';
+      })
+      .catch(function () {
+        errorBox.style.display = 'block';
+        btn.disabled = false;
+        label.textContent = 'Enviar projeto';
+      });
+  });
+</script>
+</body>
+</html>
