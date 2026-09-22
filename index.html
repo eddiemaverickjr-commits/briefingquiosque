@@ -113,8 +113,14 @@
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 8px;">
-          <label for="arquivos" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Anexar referências (imagens, plantas, PDF)</label>
-          <input id="arquivos" name="attachment" type="file" multiple accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 14px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          <label for="arquivo1" style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #111111;">Anexar referências (até 4 arquivos — imagens, plantas, PDF)</label>
+          <div class="field-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+            <input id="arquivo1" name="attachment" type="file" accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 13px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+            <input id="arquivo2" name="attachment2" type="file" accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 13px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+            <input id="arquivo3" name="attachment3" type="file" accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 13px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+            <input id="arquivo4" name="attachment4" type="file" accept="image/*,.pdf" style="width: 100%; padding: 12px 16px; font-size: 13px; color: #625f52; background: #ffffff; border: 1px solid #8b8676; border-radius: 0px;">
+          </div>
+          <span style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; color: #9e9b8e;">Máx. 10MB somando todos os arquivos</span>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 8px;">
