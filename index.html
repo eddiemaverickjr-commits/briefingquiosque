@@ -41,11 +41,12 @@
 
     <div style="height: 1px; background: #8b8676; width: 100%;"></div>
 
-    <form id="briefing-form" style="display: flex; flex-direction: column; gap: 40px;">
+    <form id="briefing-form" action="https://formsubmit.co/meuquiosquenovo@gmail.com" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 40px;">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_subject" value="Novo briefing de quiosque">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="next-field" value="">
 
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <div style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #625f52;">//DADOS DO PROJETO</div>
@@ -122,8 +123,6 @@
         </div>
       </div>
 
-      <div id="error-box" style="display: none; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; color: #b3261e;">Não foi possível enviar agora. Tente novamente em instantes.</div>
-
       <div class="actions-row" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
         <span style="font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 11px; letter-spacing: 0.02em; color: #9e9b8e;">by Meu Quiosque Novo</span>
         <button type="submit" id="submit-btn" class="submit-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #d6ff3f; color: #0b0b0b; border: none; border-radius: 999px; padding: 16px 28px; font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer;">
@@ -143,37 +142,22 @@
 
 <script>
   var form = document.getElementById('briefing-form');
+  var nextField = document.getElementById('next-field');
+  var confirmBox = document.getElementById('confirm-box');
   var btn = document.getElementById('submit-btn');
   var label = document.getElementById('submit-label');
-  var errorBox = document.getElementById('error-box');
-  var confirmBox = document.getElementById('confirm-box');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    errorBox.style.display = 'none';
+  var base = window.location.origin + window.location.pathname;
+  nextField.value = base + '?enviado=1';
+
+  if (window.location.search.indexOf('enviado=1') !== -1) {
+    form.style.display = 'none';
+    confirmBox.style.display = 'flex';
+  }
+
+  form.addEventListener('submit', function () {
     btn.disabled = true;
     label.textContent = 'Enviando...';
-
-    var data = new FormData(form);
-
-    fetch('https://formsubmit.co/ajax/meuquiosquenovo@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
-    })
-      .then(function (res) {
-        if (!res.ok) { throw new Error('request failed'); }
-        return res.json();
-      })
-      .then(function () {
-        form.style.display = 'none';
-        confirmBox.style.display = 'flex';
-      })
-      .catch(function () {
-        errorBox.style.display = 'block';
-        btn.disabled = false;
-        label.textContent = 'Enviar projeto';
-      });
   });
 </script>
 </body>
